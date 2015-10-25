@@ -1,0 +1,19 @@
+<?php
+	// Get musicians from the database
+
+	// Limit the number of returned items
+	$limit = 20;
+	if(isset($_GET['limit'])) {
+		$limit = $_GET['limit'];
+	}
+	$offset = 0;
+	if(isset($_GET['offset'])) {
+		$offset = $_GET['offset'];
+	}
+
+	// Create prepared statement
+	$stmt = $conn->prepare("SELECT * FROM musicians LIMIT ?, ?");
+	$stmt->bind_param("ii", $offset, $limit);
+	$stmt->execute();
+	$stmt->bind_result($db_id, $db_fname, $db_mname, $db_lname, $db_dob, $db_dod, $db_instruments);
+?>

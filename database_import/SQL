@@ -1,0 +1,7 @@
+SQL
+
+create table musicians(id INT PRIMARY KEY AUTO_INCREMENT NOT NULL, fname VARCHAR(25) NOT NULL, mname VARCHAR(50), lname VARCHAR(25), dob DATE NOT NULL, dod VARCHAR(20));
+
+create table instruments(id INT PRIMARY KEY AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL);
+
+create table mus_to_ins(id INT PRIMARY KEY AUTO_INCREMENT NOT NULL, mus_id INT NOT NULL, ins_id INT NOT NULL, FOREIGN KEY (mus_id) REFERENCES musicians(id), FOREIGN KEY (ins_id) REFERENCES instruments(id));

@@ -1,0 +1,9 @@
+<musicians>
+	<musician>
+		<fname>John</fname>
+		<mname>Walker</mname>
+		<lname>Scott</lname>
+		<dob>20/7/14</dob>
+		<instruments>Saxophone, Guitar</instruments>
+	</musician>
+</musicians>
